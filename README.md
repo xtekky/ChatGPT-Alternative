@@ -13,6 +13,15 @@ from ..you_client import ask
 response = ask("Hello World !")
 print(response)
 ```
+Response example:
+```json
+ {
+    "response": "Hello World is an iconic phrase that is often used as the first program many computer science students create It is also an online gift store in Philadelphia a magazine issue a repository on GitHub an example Express app a minimal Docker example a language learning program and an enrichment program taught by software engineers AI architects data scientists and educators.", 
+    "links": null, 
+    "extra": null
+}
+
+```
 
 Project Organization
 ------------
