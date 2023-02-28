@@ -6,20 +6,19 @@ from sys        import argv
 
 def ask(
     question        : str,
-    page            : int = 1,
-    count           : int = 10,
-    safeSearch      : str = "Moderate",
+    page            : int  = 1,
+    count           : int  = 10,
+    safeSearch      : str  = "Moderate",
     onShoppingpage  : bool = False,
-    mkt             : str = "",
-    responseFilter  : str = "WebPages,Translations,TimeZone,Computation,RelatedSearches",
-    domain          : str = "youchat",
-    queryTraceId    : str = str(uuid4()),
+    mkt             : str  = "",
+    responseFilter  : str  = "WebPages,Translations,TimeZone,Computation,RelatedSearches",
+    domain          : str  = "youchat",
+    queryTraceId    : str  = None,
     chat            : list = [],
     includelinks    : bool = False,
     detailed        : bool = False,
-    debug           : bool = False
-) -> dict:
-
+    debug           : bool = False ) -> dict:
+    
     client         = Session(client_identifier="chrome_108")
     client.headers = {
         "authority"         : "you.com",
@@ -46,7 +45,7 @@ def ask(
             "mkt"            : mkt,
             "responseFilter" : responseFilter,
             "domain"         : domain,
-            "queryTraceId"   : queryTraceId,
+            "queryTraceId"   : str(uuid4()) if queryTraceId is None else queryTraceId,
             "chat"           : str(chat),  # {"question":"","answer":" '"}
         }
     )
